@@ -51,7 +51,7 @@ Few remarks:
 ```
 
 * Notice that `replication-package` is the unzipped version of the package.
-* The same dropbox link also contains paper and appendices in the directory `paper-appendices`. You should download those as well.
+* The same dropbox link also contains paper and appendices in the directory `paper-appendices`. You should download those as well *into this same folder* so that you have everything in one place.
 
 
 ## Recommended workflow
