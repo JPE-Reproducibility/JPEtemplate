@@ -31,7 +31,7 @@ _A brief explanation of important terms, before we start!_
 
 1. Dropbox: a location where authors upload their package and where the journal office uploads pdfs of paper and appendix. You download the package from there via the URL contained in your assignment email.
 2. `gh`: Github.
-3. Github Repository (_repo_): The location on github.com where we store the _code_ of a given package (not the data!). It is also the location where you should file an issue, in case you encounter any problems or have questions. The github repo associated with this package was in your assignment email for this package.
+3. Github Repository (_repo_): The location on github.com where we store the _code_ of a given package (not the data!). It is also the location where you should file an issue, in case you encounter any problems or have questions. The github repo associated with this package was in your assignment email for this package. Let me print it here again for you (keep a browser tab open): {{< var repo >}}
 4. `round`: the iteration number of this package. Notice that on the repo, each iteration has their own branch. Notice that you start on `round1`.
 5. manuscript/paper: The PDFs of accepted paper and appendices, which we want to verify. You should copy both paper and appendix into the root of this repo
 
@@ -46,20 +46,8 @@ Some useful information up front:
 
 
 
-
 > {REPLICATOR} the file you are looking at lives in a git repository on your computer. You should place the repository in a location on your computer where you have read and write access (I would not put it on any cloud storage to avoid issues). 
 
-> {REPLICATOR} Your first task will be to _download the deposit_ from XXXX dataverse and place it in a folder `replication-package`. That is, your repository should look as follows:
-
-```
-.
-├── generated
-├── replication-package
-├── images
-├── package-output-map.xlsx 
-├── README.md
-└── TEMPLATE.qmd
-```
 
 > {REPLICATOR} you will edit _this_ file (`TEMPLATE.qmd`). It is the source of your report. The package of the authors lives in folder `replication-package/`. We call the lowest level of this repo (marked by the dot `.` above) the _root of the repo_. Do not get confused if the authors talk about the _root of their package_, which would be location `./replication-package/` in this case.
 
@@ -98,7 +86,7 @@ In assessing compliance with our [Data and Code Availability Policy](https://www
 
 # Data description
 
-> {REPLICATOR} If the project has any confidential or restricted data, please leave the following statements here. If not, delete until next heading (### Data Sources).
+> {REPLICATOR} If the project has any confidential or restricted data, please leave the following statements here. If not, delete until next heading (`## Data Sources`).
 
 For any data that cannot be provided as part of the replication package, please provide the following information as part of the README.
 
@@ -116,7 +104,7 @@ For any data that cannot be provided as part of the replication package, please 
 
 > {REPLICATOR} Identify all INPUT data sources, i.e. raw data files. Fill out the table below (regardless of whether the authors do provide a similar table in their readme). For each data source, list in THIS document presence or absence of source, codebook/information on the data, and summary statistics. Summary statistics and codebook may not be necessary if they are available for public use data. In all cases, if the author of the article points to an online location for such information, that is OK. Point out only a summary of shortcomings. For all data sources, check for a data citation. Oftentimes authors will cite the **paper** in which a dataset is originally used, but this is not a *data* citation. If you have found what you think to be a data citation, quote it in the report as shown below for the "Example data". When filling out the table, you should go through this mental list for each data source:
 > 
-> - [ ] Dataset is provided in public dataverse deposit (yes/no)
+> - [ ] Dataset is provided in public (dataverse) deposit (yes/no)
 > - [ ] Dataset is PRIVATELY provided (not for publication)
 > - [ ] DOI or URL is provided, and works: (PROVIDE URL OR DOI HERE)
 > - [ ] Access conditions are described:
@@ -132,7 +120,7 @@ For any data that cannot be provided as part of the replication package, please 
 | ----                 | ---    | ---     | ---     | ---             | ----         | ----        | 
 | data/raw/example.dta | yes    | no      | yes     | no              | yes          | yes         |
 | example2.dta         | yes    | no      | -       | no              | no           | yes         |
-| BLS                  | no     | no      | yes     | no              | yes           | yes          |
+| BLS                  | no     | no      | yes     | no              | yes          | yes          |
 
 ### Example data: Bureau of Labor Statistics
 
@@ -212,8 +200,7 @@ For missing requirements, see the list of required changes in @sec-findings
 
 # Analyzing Data and Code Files
 
-> {REPLICATOR} Here I provide you with a list of what I identified as *data files* based on file endings. Please check the list and amend if there are obvious mistakes. Detailed readings (for each line) is 
->
+> {REPLICATOR} Here I provide you with a list of what I identified as *data files* based on file endings. Please check the list and amend if there are obvious mistakes. 
 
 {{< include generated/report-file-paths.md >}}
 
@@ -320,7 +307,7 @@ error: command distinct unknown
 >
 > Screenshots are best added to this `.qmd` file via the VScode extension [markdown paste](https://marketplace.visualstudio.com/items/?itemName=telesoho.vscode-markdown-paste-image). You need to find out how your OS can screenshot to the system clipboard (on my mac I have to do shift+control+cmd+4 instead of only the usual shift+cmd+4 to achieve this). Once you took the screen shot, you can use the markdown paste extension to literally *paste* the image into this qmd. It will create a filename with a timestamp. I set the preferences for the extension (in hidden folder `.vscode`) so that your screenshots go to the `images/` folder automatically. You want to commit that folder together with this file. Go into the command console of VScode and type "Markdown Paste" and memorize the shortcut (or just hit enter). You can modify the filename - no need. You end up with something like this:
 
-![DELETE THIS image FROM THE REPO](images/screenshot-20250627144043.png){width=80%}
+![DELETE THIS image FROM THE REPO before you commit](images/screenshot-20250627144043.png){width=80%}
 
 
 
@@ -388,7 +375,7 @@ Examples:
 
 ## Tables and Figures
 
-> {REPLICATOR}: Insert the filled-out `code-check.xlsx` here (complete the column `Reproduced?`), using the VS Code Plugins [Excel to Markdown table](https://marketplace.visualstudio.com/items?itemName=csholmq.excel-to-markdown-table). Then describe in more detail the issues that may have arisen.
+> {REPLICATOR}: Insert the filled-out `package-output-map.xlsx` here (complete the column `Reproduced?`), using the VS Code Plugins [Excel to Markdown table](https://marketplace.visualstudio.com/items?itemName=csholmq.excel-to-markdown-table). Then describe in more detail the issues that may have arisen.
 
 Examples:
 
@@ -477,12 +464,10 @@ Figure 3 [DELETE THIS FIGURE]
 ```bash
 git add package-output-map.xlsx
 git add images # for your screenshots
-git add TEMPLATE.qmd
+git add TEMPLATE.qmd  # your edits
 git add TEMPLATE.pdf  # the compiled version of your report
-git add paper.pdf
-git add appendix.pdf
 git commit -m 'first round report. code breaks. missing citations.'
-git push origin round1  # pushes back to `round1` branch
+git push origin round1  # pushes back to `round1` branch - this must be the branch you cloned from, don't create a new branch!
 ```
 
 

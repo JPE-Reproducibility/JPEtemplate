@@ -125,6 +125,7 @@ __MACOSX/
 __pycache__
 libraries
 # Exclusions we need for our work
+# everything in generated/ and images/ needs to be committed
 !generated/
 !generated/**
 !images/
@@ -148,7 +149,7 @@ cache
 # Ignore all files in any directory named "data"
 **/data/*
 
-# report parts
+# report parts to ignore
 TEMPLATE.html
 TEMPLATE_files/
 /.quarto/

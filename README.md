@@ -1,5 +1,8 @@
 # JPE Report Template 
 
+> This template is heavily based on the AEA Data Editor's template https://github.com/AEADataEditor/replication-template 
+> Thanks! 🙏
+
 ## Required Tools to use Template
 
 1. Install [Quarto](https://quarto.org/docs/get-started/) to compile the report. 
@@ -10,48 +13,60 @@
 
 ## Outline
 
-* clone this repo to a findable location on your computer (maybe `~/JPE-replications`?). Click on the green button "Code"
-* If so, you will have `~/JPE-replications/JPE-Authorname-12345678` on your machine. You will work inside this folder.
+* clone this repo to a findable location on your computer (maybe `~/JPE-replications`?). Click on the green button "Code" and copy the URL. Do this
+   ```
+   cd ~/JPE-replications # or wherever you prefer
+   git clone https://github.com/JPE-Reproducibility/JPE-Oswald-66666666.git
+   ```
+* If so, you will have `~/JPE-replications/JPE-Oswald-66666666` on your machine. You will work inside this folder.
 * The content of this repo right now is:
 
 ```
 .
+├── LICENSE
+├── README.md
+├── TEMPLATE.qmd
 ├── _quarto.yml
 ├── _variables.yml
 ├── generated
 ├── images
-├── LICENSE
 ├── package-output-map.xlsx
-├── README.md
-└── TEMPLATE.qmd
+├── paper-appendices
+├── replication-package <- code only
+└── tools
 ```
 
 Few remarks:
 
 1. You will edit the file `TEMPLATE.qmd` in your text editor (VScode ideally). 
-2. Your screenshots will be saved to `images/`. 
+2. Your screenshots will be saved to `images/` if you use VScode with the correct extension (see below)
 3. The files `_quarto.yml` and `_variables.yml` are generated inputs for the template, as is the content of the `generated/` folder.
 4. the folder `paper-appendices` contains pdf versions of paper and appendices for you to compare to.
+5. the folder `replication-package` contains everything which considered *code* of some sort, so we track it here. You need to overwrite this folder with the **full unzipped package**, such that you have the full package content (the data, not only the code!). You will see that the folder structure is identical to what you see in the full package - I just omitted from here everything that is not code. See next step.
+6. `tools` contains useful config files which you can use to prepare a clean environment.
 
 ## Next Step
 
 * In your assignment email, there was a link to a dropox folder. Download and unzip the replication package as `replication-package` **into this repository**. That is, your repo should look like this after you downloaded the package:
 
 ```
-.
+├── LICENSE
+├── README.md
+├── TEMPLATE.html
+├── TEMPLATE.qmd
+├── TEMPLATE_files
 ├── _quarto.yml
 ├── _variables.yml
 ├── generated
 ├── images
-├── LICENSE
-├── replication-package
 ├── package-output-map.xlsx
-├── README.md
-└── TEMPLATE.qmd
+├── paper-appendices
+├── replication-package  <- code, data, docs, everything
+└── tools  
+
 ```
 
-* Notice that `replication-package` is the unzipped version of the package.
-* The same dropbox link also contains paper and appendices in the directory `paper-appendices`. You should download those as well *into this same folder* so that you have everything in one place.
+
 
 
 ## Recommended workflow
