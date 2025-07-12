@@ -211,9 +211,9 @@ For missing requirements, see the list of required changes in @sec-findings
 {{< include generated/report-large-files.md >}}
 
 
+> {REPLICATOR}: no need to compile `TEMPLATE-APPENDIX.qmd`. I will do this myself!
 
-
-Further details in appendix @sec-appendix.
+Further details in the separate Appendix to this report.
 
 
 
@@ -469,17 +469,3 @@ git add TEMPLATE.pdf  # the compiled version of your report
 git commit -m 'first round report. code breaks. missing citations.'
 git push origin round1  # pushes back to `round1` branch - this must be the branch you cloned from, don't create a new branch!
 ```
-
-
-
-# Appendix {#sec-appendix}
-
-
-
-{{< include generated/report-file-sizes.md >}}
-
-{{< include generated/report-hardcoded-numbers.md >}}
-
-{{< include generated/report-file-paths-detail.md >}}
-
-{{< include generated/report-pii.md >}}
