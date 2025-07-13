@@ -21,6 +21,8 @@ format:
 
 > {REPLICATOR} Next to {REPLICATOR} for you, the replicator, there are instructions for the authors/data editor. Those are labelled either {REQUIRED} or {SUGGESTED}. You should delete those *only if specifically instructed*.
 
+> {REPLICATOR} Also compile document TEMPLATE-APPENDIX.qmd. It contains potentially useful information for you, like lists of suspicious files or other noteworthy content.
+
 > {REPLICATOR}: You should look at additional [Step by step guidance from Data Editor for Replicators](https://jpe-reproducibility.github.io/jpereplicators)
 
 ::: {.callout-tip}
