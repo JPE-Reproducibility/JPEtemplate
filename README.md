@@ -66,6 +66,7 @@ Few remarks:
 
 ```
 
+**Do NOT copy `replication-package` from dropbox to another location outside this repository!**
 
 
 
