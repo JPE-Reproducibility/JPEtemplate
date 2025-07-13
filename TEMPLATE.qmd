@@ -468,6 +468,8 @@ git add package-output-map.xlsx
 git add images # for your screenshots
 git add TEMPLATE.qmd  # your edits
 git add TEMPLATE.pdf  # the compiled version of your report
+git add TEMPLATE-APPENDIX.qmd  # if you made any edits
 git commit -m 'first round report. code breaks. missing citations.'
-git push origin round1  # pushes back to `round1` branch - this must be the branch you cloned from, don't create a new branch!
+# which round is this? fill in for which_round={round1, round2, ...}
+git push origin which_round
 ```
