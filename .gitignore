@@ -124,6 +124,9 @@ __MACOSX/
 *.npy
 __pycache__
 libraries
+paper-appendices/**
+
+
 # Exclusions we need for our work
 # everything in generated/ and images/ needs to be committed
 !generated/
