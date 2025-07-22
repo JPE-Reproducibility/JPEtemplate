@@ -41,9 +41,10 @@ Few remarks:
 1. You will edit the file `TEMPLATE.qmd` in your text editor (VScode ideally). 
 2. Your screenshots will be saved to `images/` if you use VScode with the correct extension (see below)
 3. The files `_quarto.yml` and `_variables.yml` are generated inputs for the template, as is the content of the `generated/` folder.
-4. the folder `paper-appendices` contains pdf versions of paper and appendices for you to compare to.
-5. the folder `replication-package` contains everything which considered *code* of some sort, so we track it here. You need to overwrite this folder with the **full unzipped package**, such that you have the full package content (the data, not only the code!). You will see that the folder structure is identical to what you see in the full package - I just omitted from here everything that is not code. See next step.
-6. `tools` contains useful config files which you can use to prepare a clean environment.
+4. the folder `replication-package` contains everything which considered *code* of some sort, so we track it here. You need to overwrite this folder with the **full unzipped package**, such that you have the full package content (the data, not only the code!). You will see that the folder structure is identical to what you see in the full package - I just omitted from here everything that is not code. See next step.
+5. `tools` contains useful config files which you can use to prepare a clean environment.
+6. the folder `paper-appendices` is available via the shared dropbox link in your assignment email.
+
 
 ## Next Step
 
@@ -60,7 +61,7 @@ Few remarks:
 ├── generated
 ├── images
 ├── package-output-map.xlsx
-├── paper-appendices
+├── paper-appendices     <- copied from dropbox
 ├── replication-package  <- code, data, docs, everything
 └── tools  
 
