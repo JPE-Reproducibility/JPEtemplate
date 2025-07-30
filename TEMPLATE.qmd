@@ -463,6 +463,9 @@ Figure 3 [DELETE THIS FIGURE]
 
 > {REPLICATOR} Don't forget to delete all those REPLICATOR instructions before you commit the files!!!
 
+
+> {REPLICATOR} I leave this here 👇 as a reminder for you. Please delete those commands before you commit your report:
+
 ```bash
 git add package-output-map.xlsx
 git add images # for your screenshots
