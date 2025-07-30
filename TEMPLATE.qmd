@@ -4,6 +4,13 @@ date: today
 number-sections: true
 format:
   html: default
+  typst:
+    include-in-header:
+      - text: |
+          /* Color links */
+          #show link: set text(fill: rgb(0, 0, 255))
+          #show "☐": text(font: "Arial")[☐]
+          #show "☑": text(font: "Arial")[☑]
 ---
 
 # Paper Identification
