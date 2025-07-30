@@ -95,7 +95,7 @@ For any data that cannot be provided as part of the replication package, please 
 > {REQUIRED}  Please specify how long the data will be preserved in the restricted-access location.
 
 > {REQUIRED} Please provide affirmation of support for replication checks.
-  - As per the [JPE policy](https://www.aeaweb.org/journals/data/data-code-policy), "In cases where data cannot be published in an openly accessible trusted data repository like the JPE dataverse, authors who have requested an exemption to publish them at the time of first submission must commit to preserving the data and code for a period of no less than five years following the publication of the paper. They should also provide reasonable assistance to requests for clarification and replication."
+  - As per the [JPE policy](https://jpedataeditor.github.io/policy.html), "In cases where data cannot be published in an openly accessible trusted data repository like the JPE dataverse, authors who have requested an exemption to publish them at the time of first submission must commit to preserving the data and code for a period of no less than five years following the publication of the paper. They should also provide reasonable assistance to requests for clarification and replication."
 
 
 > {REQUIRED} Please provide a codebook for the data.
@@ -451,7 +451,7 @@ Figure 3 [DELETE THIS FIGURE]
 - [ ] `Insufficient time available to replicator` is applicable when (a) running the code would take weeks or more (b) running the code might take less time if sufficient compute resources were to be brought to bear, but no such resources can be accessed in a timely fashion (c) the replication package is very complex, and following all (manual and scripted) steps would take too long.
 - [ ] `Data missing` is marked when data *should* be available, but was erroneously not provided, or is not accessible via the procedures described in the replication package
 - [ ] `Data not available` is marked when data requires additional access steps, for instance purchase or application procedure. 
-- [ ] `Missing README` is marked if there is no README to guide the replicator, or the README is not in compliance with AEA requirements
+- [ ] `Missing README` is marked if there is no README to guide the replicator, or the README is not in compliance with JPE requirements
 
 
 
