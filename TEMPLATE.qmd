@@ -40,7 +40,7 @@ _A brief explanation of important terms, before we start!_
 
 1. Dropbox: a location where authors upload their package and where the journal office uploads pdfs of paper and appendix. You download the package from there via the URL contained in your assignment email.
 2. `gh`: Github.
-3. Github Repository (_repo_): The location on github.com where we store the _code_ of a given package (not the data!). It is also the location where you should file an issue, in case you encounter any problems or have questions. The github repo associated with this package was in your assignment email for this package. Let me print it here again for you (keep a browser tab open): {{< var repo >}}
+3. Github Repository (_repo_): The location on github.com where we store the _code_ of a given package (not the data!). It is also the location where you should file an issue tagging @jpedataeditor in the text, in case you encounter any problems or have questions. The github repo associated with this package was in your assignment email for this package. Let me print it here again for you (keep a browser tab open): {{< var repo >}}
 4. `round`: the iteration number of this package. Notice that on the repo, each iteration has their own branch. Notice that you start on `round1`.
 5. manuscript/paper: The PDFs of accepted paper and appendices, which we want to verify. You should copy both paper and appendix into the root of this repo
 
@@ -296,7 +296,7 @@ Example:
 - Downloaded code and data from dataverse.
 - Commited code to git repo.
 - Added the config.do generating system information.
-- Ran code as per README, but the third step did not work. (describe the problem HERE, and paste the full log in an issue on the github repo of this package!) 
+- Ran code as per README, but the third step did not work. (describe the problem HERE, and paste the full log in an issue on the github repo of this package - do not forget to add the tag @jpedataeditor whenever you open an issue!) 
 
 ```R
 error: command distinct unknown
