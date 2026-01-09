@@ -172,14 +172,14 @@ Example:
 
 - [ ] README is in TXT, MD, or PDF format
 - [ ] README is accessible at the root of the package (not inside a folder)
-- [ ] Title conforms to guidance (starts with "Data and Code for:" or "Code for:", is properly capitalized)
+- [ ] Title conforms to guidance (starts with "Data and Code for: Title of Paper" or "Code for: Title of Paper", is properly capitalized)
 - [ ] Authors (with affiliations) are listed in the same order as on the paper
 
 > {REPLICATOR}: If any of the above are NOT checked, leave the related {REQUIRED} element here. Otherwise, delete the line.
 
 > {REQUIRED} Please ensure that a ASCII (txt), Markdown (md), or PDF version of the README are available in the data and code deposit.
 
-> {REQUIRED} Please review the title of the deposit as per our guidelines (below).
+> {REQUIRED} Please review the title of the deposit as per our guidelines.
 
 > {REQUIRED} Please review authors and affiliations on the deposit. In general, they are the same, and in the same order, as for the manuscript; however, authors can deviate from that order.
 
@@ -222,8 +222,6 @@ For missing requirements, see the list of required changes in @sec-findings
 
 > {REPLICATOR}: no need to compile `TEMPLATE-APPENDIX.qmd`. I will do this myself!
 
-Further details in the separate Appendix to this report.
-
 
 
 ## Code description
@@ -239,7 +237,6 @@ Further details in the separate Appendix to this report.
 
 {{< include generated/report-cloc.md >}}
 
-The full list of programs provided can be found in the Appendix.
 
 - [ ] The replication package contains a "main" or "master" file(s) which calls all other auxiliary programs.
 
