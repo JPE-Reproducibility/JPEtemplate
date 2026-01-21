@@ -150,22 +150,6 @@ For any data that cannot be provided as part of the replication package, please 
 
 
 
-## Analysis Data Files - Intermediate Results
-
-> {REPLICATOR}: Separately, identify any analysis data files, or intermediate results files provided. Analysis data files are produced by code in the deposit from data sources. Not every deposit will have these. Analysis data files do not need to be cited, because they are a key part of the replication package.
-
-- [ ] No analysis data files mentioned
-- [ ] Analysis data files mentioned, not provided (explain reasons below)
-- [ ] Analysis data files mentioned, provided. File names listed below.
-- [ ] Analysis data files not mentioned, but provided.
-
-Example:
-
-```bash
-./data/processed/regression_main.dta
-```
-
-
 # Requirements 
 
 > {REPLICATOR}: Check that these requirements are met. 
@@ -211,6 +195,8 @@ For missing requirements, see the list of required changes in @sec-findings
 
 > {REPLICATOR} Here I provide you with a list of what I identified as *data files* based on file endings. Please check the list and amend if there are obvious mistakes. 
 
+{{< include generated/report-pii.md >}}
+
 {{< include generated/report-file-paths.md >}}
 
 {{< include generated/report-duplicates.md >}}
@@ -220,7 +206,9 @@ For missing requirements, see the list of required changes in @sec-findings
 {{< include generated/report-large-files.md >}}
 
 
-> {REPLICATOR}: no need to compile `TEMPLATE-APPENDIX.qmd`. I will do this myself!
+
+
+> {REPLICATOR}: no need to commit a compiled version of `TEMPLATE-APPENDIX.qmd`. However, you should compile it and have a look at what is contained in that file!
 
 
 
@@ -290,7 +278,7 @@ For missing requirements, see the list of required changes in @sec-findings
 
 Example:
 
-- Downloaded code and data from dataverse.
+- Downloaded code and data from dropbox.
 - Commited code to git repo.
 - Added the config.do generating system information.
 - Ran code as per README, but the third step did not work. (describe the problem HERE, and paste the full log in an issue on the github repo of this package - do not forget to add the tag @jpedataeditor whenever you open an issue!) 
