@@ -19,7 +19,7 @@ format:
 
 # Report Appendix
 
-This is the appendix to the main report. It contains supplementary information which may be helpful for the replicator and/or the author.
+This is the appendix to the main report. It contains supplementary information which may be helpful for the replicator and/or the author. Please look carefully at the PII report at the bottom.
 
 
 {{< include generated/report-file-sizes.md >}}
@@ -28,4 +28,4 @@ This is the appendix to the main report. It contains supplementary information w
 
 {{< include generated/report-file-paths-detail.md >}}
 
-{{< include generated/report-pii.md >}}
+{{< include generated/report-pii-appendix.md >}}
