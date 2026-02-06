@@ -4,13 +4,6 @@ date: today
 number-sections: true
 format:
   html: default
-  typst:
-    include-in-header:
-      - text: |
-          /* Color links */
-          #show link: set text(fill: rgb(0, 0, 255))
-          #show "☐": text(font: "Arial")[☐]
-          #show "☑": text(font: "Arial")[☑]
 ---
 
 # Paper Identification
@@ -39,8 +32,8 @@ format:
 _A brief explanation of important terms, before we start!_
 
 1. Dropbox: a location where authors upload their package and where the journal office uploads pdfs of paper and appendix. You download the package from there via the URL contained in your assignment email.
-2. `gh`: Github.
-3. Github Repository (_repo_): The location on github.com where we store the _code_ of a given package (not the data!). It is also the location where you should file an issue tagging @jpedataeditor in the text, in case you encounter any problems or have questions. The github repo associated with this package was in your assignment email for this package. Let me print it here again for you (keep a browser tab open): {{< var repo >}}
+2. `gh`: Github.com.
+3. Github Repository (_repo_): The location on `gh` where we store the _code_ of a given package (not the data!). It is also the location where you should file an issue tagging `@jpedataeditor` in the text, in case you encounter any problems or have questions. The github repo associated with this package was in your assignment email for this package. Let me print it here again for you (keep a browser tab open): [{{< var repo >}}]({{< var repo >}})
 4. `round`: the iteration number of this package. Notice that on the repo, each iteration has their own branch. Notice that you start on `round1`.
 5. manuscript/paper: The PDFs of accepted paper and appendices, which we want to verify. You should copy both paper and appendix into the root of this repo
 
@@ -58,7 +51,7 @@ Some useful information up front:
 > {REPLICATOR} the file you are looking at lives in a git repository on your computer. You should place the repository in a location on your computer where you have read and write access (I would not put it on any cloud storage to avoid issues). 
 
 
-> {REPLICATOR} you will edit _this_ file (`TEMPLATE.qmd`). It is the source of your report. The package of the authors lives in folder `replication-package/`. We call the lowest level of this repo (marked by the dot `.` above) the _root of the repo_. Do not get confused if the authors talk about the _root of their package_, which would be location `./replication-package/` in this case.
+> {REPLICATOR} you will edit _this_ file (`./TEMPLATE.qmd`). It is the source of your report. The package of the authors lives in folder `replication-package/`. We call the lowest level of this repo (marked by the dot `.` in `./TEMPLATE.qmd`) the _root of the repo_. Do not get confused if the authors talk about the _root of their package_, which would be location `./replication-package/` in this case.
 
 
 
@@ -75,8 +68,8 @@ In assessing compliance with our [Data and Code Availability Policy](https://www
 > {REPLICATOR} Check off the following sections/elements that you find in either the README provided by the authors, or in the authors' online appendix (rare).
 
 - [ ] Data Availability and Provenance Statements
-  - [ ] Statement about Rights - Part 1: Right to use the data
-  - [ ] Statement about Rights - Part 2: Right to publish the data
+  - [ ] Statement about Rights - Part 1: Right to use the data (e.g. *did the authors lawfully obtain the data*)
+  - [ ] Statement about Rights - Part 2: Right to publish the data (e.g. *are human subjects involved and did permission been granted to publish their data?*)
   - [ ] License for Data (optional, but recommended)
   - [ ] Details on each Data Source
 - [ ] Dataset list
@@ -91,6 +84,26 @@ In assessing compliance with our [Data and Code Availability Policy](https://www
 - [ ] List of tables and programs
 - [ ] References (Optional, but recommended) 
 
+
+# High-level Description of Research Project
+
+> {REPLICATOR} Tick all applicable boxes. You tick a box by placing an `x` between the square brackets (don't change anything else).
+
+*This research project...*
+
+- [ ] uses observational data.
+- [ ] uses *confidential* observational data.
+- [ ] uses data generated via experiment or trial by the authors (in field or lab).
+  - [ ] For lab experiments: The code to implement the experimental protocol (z-Tree, o-Tree etc) is included in the package.
+  - [ ] A PDF copy of IRB approval is contained in the package.
+  - [ ] A PDF document outlining the design of the experiment, including information on the selection and eligibility of participants is included.
+  - [ ] A PDF copy of the instructions given to participants in both original language and an English translation is included.
+- [ ] uses data generated via survey by the authors (in field or online)
+  - [ ] The programs used to administer the survey (e.g. qualtrics survey file) are included.
+  - [ ] A PDF copy of IRB approval is contained in the package.
+  - [ ] A PDF of the original questionaire(s) and information on the selection and eligibility of participants is included.
+- [ ] is a simulation study: the data are generated by an algorithm.
+- [ ] is a numerical illustration: no data are used but code is used to produce illustrative output (tables, figures)
 
 
 # Data description
@@ -193,7 +206,7 @@ For missing requirements, see the list of required changes in @sec-findings
 
 # Analyzing Data and Code Files
 
-> {REPLICATOR} Here I provide you with a list of what I identified as *data files* based on file endings. Please check the list and amend if there are obvious mistakes. 
+> {REPLICATOR} Here I provide you with a list of what I identified as *data files* based on file endings. Please check the list and amend if there are obvious mistakes. Watch out for Personally Identifiable Information (PII)!
 
 {{< include generated/report-pii.md >}}
 
