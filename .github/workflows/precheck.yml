@@ -11,17 +11,20 @@ jobs:
   precheck:
     runs-on: self-hosted
     
-    env:
-      DROPBOX_BASE: ${{ secrets.DROPBOX_BASE_PATH }}
-      JULIA_PROJECT: ${{ secrets.JULIA_RUNNER_ENV }}  
-    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
       
-      - name: Verify Julia packages are available
+      - name: Verify environment and packages
         run: |
-          julia --project=$JULIA_PROJECT -e '
+          # Check environment variables
+          if [ -z "$DROPBOX_BASE" ] || [ -z "$JULIA_RUNNER_ENV" ]; then
+            echo "❌ Required environment variables not set on runner"
+            exit 1
+          fi
+          
+          # Check Julia packages
+          julia --project=$JULIA_RUNNER_ENV -e '
             using Pkg
             println("=== Julia Environment ===")
             Pkg.status()
@@ -34,9 +37,7 @@ jobs:
           '
       
       - name: Read variables from YAML
-        id: vars
         run: |
-          # Parse YAML and export as environment variables for logging
           echo "=== Configuration ==="
           while IFS=': ' read -r key value; do
             clean_value=$(echo $value | tr -d '"')
@@ -45,7 +46,7 @@ jobs:
           done < _variables.yml
       
       - name: Run precheck script
-        run: julia --project=$JULIA_PROJECT runner_precheck.jl
+        run: julia --project=$JULIA_RUNNER_ENV runner_precheck.jl
       
       - name: Commit and push results
         run: |
