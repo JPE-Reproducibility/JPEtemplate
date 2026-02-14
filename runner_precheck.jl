@@ -14,7 +14,7 @@ dest_path = joinpath(ENV["GITHUB_WORKSPACE"], "replication-package")
 # Copy package
 @info "Copying package" source_path dest_path
 if isdir(source_path)
-    cp(source_path, dest_path; force=true, recursive=true)
+    cp(source_path, dest_path; force=true)
     @info "✓ Package copied successfully"
 else
     error("✗ Package not found at \$source_path")
