@@ -1,0 +1,71 @@
+name: Run Precheck
+
+on:
+  push:
+    paths:
+      - '_variables.yml'
+      - 'runner_precheck.jl'
+  workflow_dispatch:
+
+jobs:
+  precheck:
+    runs-on: self-hosted
+    
+    env:
+      DROPBOX_BASE: ${{ secrets.DROPBOX_BASE_PATH }}
+      JULIA_PROJECT: ${{ secrets.JULIA_RUNNER_ENV }}  
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Verify Julia packages are available
+        run: |
+          julia --project=$JULIA_PROJECT -e '
+            using Pkg
+            println("=== Julia Environment ===")
+            Pkg.status()
+            println("\n=== Testing package loads ===")
+            using YAML
+            println("✓ YAML loaded")
+            using PackageScanner
+            println("✓ PackageScanner loaded")
+            println("\n✓ All required packages available")
+          '
+      
+      - name: Read variables from YAML
+        id: vars
+        run: |
+          # Parse YAML and export as environment variables for logging
+          echo "=== Configuration ==="
+          while IFS=': ' read -r key value; do
+            clean_value=$(echo $value | tr -d '"')
+            echo "$key: $clean_value"
+            echo "$key=$clean_value" >> $GITHUB_ENV
+          done < _variables.yml
+      
+      - name: Run precheck script
+        run: julia --project=$JULIA_PROJECT runner_precheck.jl
+      
+      - name: Commit and push results
+        run: |
+          git config user.name "GitHub Actions Bot"
+          git config user.email "actions@github.com"
+          git add .
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "🚀 prechecks round $round"
+            git push origin $GITHUB_REF_NAME
+            echo "✓ Results pushed to $GITHUB_REF_NAME"
+          fi
+      
+      - name: Summary
+        if: always()
+        run: |
+          echo "### Precheck Results" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "- **Paper ID**: $paper_id" >> $GITHUB_STEP_SUMMARY
+          echo "- **Round**: $round" >> $GITHUB_STEP_SUMMARY
+          echo "- **Journal**: $journal" >> $GITHUB_STEP_SUMMARY
+          echo "- **Status**: ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
