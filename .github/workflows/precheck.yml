@@ -10,6 +10,8 @@ on:
 jobs:
   precheck:
     runs-on: self-hosted
+    if: github.repository != 'JPE-Reproducibility/JPEtemplate'
+
     
     steps:
       - name: Checkout repository
