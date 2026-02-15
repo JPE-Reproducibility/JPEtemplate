@@ -47,6 +47,9 @@ jobs:
           done < _variables.yml
       
       - name: Run precheck script
+        env:
+          DROPBOX_BASE: ${{ secrets.DROPBOX_BASE }}
+          JULIA_RUNNER_ENV: ${{ secrets.JULIA_RUNNER_ENV }}
         run: julia --project=$JULIA_RUNNER_ENV runner_precheck.jl
       
       - name: Commit and push results
