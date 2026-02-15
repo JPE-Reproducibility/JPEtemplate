@@ -8,27 +8,26 @@ on:
 
 jobs:
   precheck:
-    runs-on: self-hosted
+    runs-on: [self-hosted, macOS, ARM64]
     if: github.repository != 'JPE-Reproducibility/JPEtemplate'
-    
-    env:
-      DROPBOX_BASE: ${{ secrets.DROPBOX_BASE }}
-      JULIA_RUNNER_ENV: ${{ secrets.JULIA_RUNNER_ENV }}
-
     
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
       
       - name: Verify environment and packages
+        env:
+          DROPBOX_BASE: ${{ secrets.DROPBOX_BASE }}
+          JULIA_RUNNER_ENV: ${{ secrets.JULIA_RUNNER_ENV }}
         run: |
-          # Check environment variables
           if [ -z "$DROPBOX_BASE" ] || [ -z "$JULIA_RUNNER_ENV" ]; then
-            echo "❌ Required environment variables not set on runner"
+            echo "❌ Required environment variables not set"
             exit 1
           fi
           
-          # Check Julia packages
+          echo "DROPBOX_BASE: $DROPBOX_BASE"
+          echo "JULIA_RUNNER_ENV: $JULIA_RUNNER_ENV"
+          
           julia --project=$JULIA_RUNNER_ENV -e '
             using Pkg
             println("=== Julia Environment ===")
@@ -51,6 +50,10 @@ jobs:
           done < _variables.yml
       
       - name: Run precheck script
+        timeout-minutes: 30
+        env:
+          DROPBOX_BASE: ${{ secrets.DROPBOX_BASE }}
+          JULIA_RUNNER_ENV: ${{ secrets.JULIA_RUNNER_ENV }}
         run: julia --project=$JULIA_RUNNER_ENV runner_precheck.jl
       
       - name: Commit and push results
