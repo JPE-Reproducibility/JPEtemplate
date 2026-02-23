@@ -16,16 +16,13 @@ jobs:
         uses: actions/checkout@v4
       
       - name: Verify environment and packages
-        env:
-          DROPBOX_BASE: ${{ secrets.DROPBOX_BASE }}
-          JULIA_RUNNER_ENV: ${{ secrets.JULIA_RUNNER_ENV }}
         run: |
-          if [ -z "$DROPBOX_BASE" ] || [ -z "$JULIA_RUNNER_ENV" ]; then
+          if [ -z "$JPE_DBOX_APPS" ] || [ -z "$JULIA_RUNNER_ENV" ]; then
             echo "❌ Required environment variables not set"
             exit 1
           fi
           
-          echo "DROPBOX_BASE: $DROPBOX_BASE"
+          echo "JPE_DBOX_APPS: $JPE_DBOX_APPS"
           echo "JULIA_RUNNER_ENV: $JULIA_RUNNER_ENV"
           
           julia --project=$JULIA_RUNNER_ENV -e '
@@ -51,9 +48,6 @@ jobs:
       
       - name: Run precheck script
         timeout-minutes: 30
-        env:
-          DROPBOX_BASE: ${{ secrets.DROPBOX_BASE }}
-          JULIA_RUNNER_ENV: ${{ secrets.JULIA_RUNNER_ENV }}
         run: julia --project=$JULIA_RUNNER_ENV runner_precheck.jl
       
       - name: Commit and push results
