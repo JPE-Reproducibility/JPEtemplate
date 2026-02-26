@@ -9,7 +9,7 @@ on:
 jobs:
   precheck:
     runs-on: [self-hosted, macOS, ARM64]
-    if: github.repository != 'JPE-Reproducibility/JPEtemplate'
+    if: github.repository != 'JPE-Reproducibility/JPEtemplate' && github.event.head_commit.message != 'Initial Commit'
     
     steps:
       - name: Checkout repository
