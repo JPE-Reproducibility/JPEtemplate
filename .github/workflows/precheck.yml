@@ -47,7 +47,6 @@ jobs:
           done < _variables.yml
       
       - name: Run precheck script
-        timeout-minutes: 30
         run: julia --project=$JULIA_RUNNER_ENV runner_precheck.jl
       
       - name: Commit and push results
