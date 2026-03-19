@@ -8,9 +8,8 @@ on:
 
 jobs:
   precheck:
-    runs-on: self-hosted
-    if: github.repository != 'JPE-Reproducibility/JPEtemplate'
-
+    runs-on: [self-hosted, macOS, ARM64]
+    if: contains(github.event.head_commit.message, '[trigger remote]')
     
     steps:
       - name: Checkout repository
@@ -18,13 +17,14 @@ jobs:
       
       - name: Verify environment and packages
         run: |
-          # Check environment variables
-          if [ -z "$DROPBOX_BASE" ] || [ -z "$JULIA_RUNNER_ENV" ]; then
-            echo "❌ Required environment variables not set on runner"
+          if [ -z "$JPE_DBOX_APPS" ] || [ -z "$JULIA_RUNNER_ENV" ]; then
+            echo "❌ Required environment variables not set"
             exit 1
           fi
           
-          # Check Julia packages
+          echo "JPE_DBOX_APPS: $JPE_DBOX_APPS"
+          echo "JULIA_RUNNER_ENV: $JULIA_RUNNER_ENV"
+          
           julia --project=$JULIA_RUNNER_ENV -e '
             using Pkg
             println("=== Julia Environment ===")
