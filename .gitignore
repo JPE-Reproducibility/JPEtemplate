@@ -5,6 +5,8 @@
 # If you want to make the parsing overall case-insensitive, you can use the following:
 #  git config core.ignorecase false
 # Version: 2025-06-06
+*.xls
+*.xlsx
 *.gpkg
 *.GPKG
 *.bak
@@ -125,6 +127,8 @@ __MACOSX/
 __pycache__
 libraries
 paper-appendices/**
+confidential-data-not-for-publication/**
+
 
 
 # Exclusions we need for our work
@@ -151,6 +155,8 @@ cache
 *.LIC
 # Ignore all files in any directory named "data"
 **/data/*
+# Ignore all files in any directory containing "confidential"
+*confidential*
 
 # report parts to ignore
 TEMPLATE.html
