@@ -21,8 +21,6 @@ format:
 
 > {REPLICATOR} Next to {REPLICATOR} for you, the replicator, there are instructions for the authors/data editor. Those are labelled either {REQUIRED} or {SUGGESTED}. You should delete those *only if specifically instructed*.
 
-> {REPLICATOR} Also compile document TEMPLATE-APPENDIX.qmd. It contains potentially useful information for you, like lists of suspicious files or other noteworthy content.
-
 > {REPLICATOR}: You should look at additional [Step by step guidance from Data Editor for Replicators](https://jpe-reproducibility.github.io/jpereplicators)
 
 ::: {.callout-tip}
@@ -57,10 +55,13 @@ Some useful information up front:
 
 # Summary
 
-> {REPLICATOR} The Data Editor will fill this part out. It will be based on any {REQUIRED} and {SUGGESTED} action items that the report makes a note of.
+> {REPLICATOR} **The Data Editor** will fill this part out. It will be based on any {REQUIRED} and {SUGGESTED} action items that the report makes a note of.
 
 
 In assessing compliance with our [Data and Code Availability Policy](https://www.journals.uchicago.edu/journals/jpe/datapolicy), our reproducibility team has identified the following issues, which we ask you to address:
+
+1. Data Editor's first point.
+2. Data Editor's second point.
 
 # General
 
@@ -217,11 +218,6 @@ For missing requirements, see the list of required changes in @sec-findings
 {{< include generated/report-zero-files.md >}}
 
 {{< include generated/report-large-files.md >}}
-
-
-
-
-> {REPLICATOR}: no need to commit a compiled version of `TEMPLATE-APPENDIX.qmd`. However, you should compile it and have a look at what is contained in that file!
 
 
 
@@ -470,6 +466,9 @@ Example:
 - [ ] `Missing README` is marked if there is no README to guide the replicator, or the README is not in compliance with JPE requirements
 
 
+{{< include generated/report-pii.md >}}
+
+
 
 > {REPLICATOR} You are done! Time to submit your report now!
 >
@@ -487,7 +486,6 @@ git add package-output-map.xlsx
 git add images # for your screenshots
 git add TEMPLATE.qmd  # your edits
 git add TEMPLATE.pdf  # the compiled version of your report
-git add TEMPLATE-APPENDIX.qmd  # if you made any edits
 git commit -m 'first round report. code breaks. missing citations.'
 # which round is this? fill in for which_round={round1, round2, ...}
 git push origin which_round
