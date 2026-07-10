@@ -15,7 +15,10 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      
+
+      - name: Fix permissions from previous run
+        run: chmod -R u+rwX . || true
+
       - name: Verify environment and packages
         run: |
           if [ -z "$JPE_DBOX_APPS" ] || [ -z "$JULIA_RUNNER_ENV" ]; then
