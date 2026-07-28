@@ -139,11 +139,11 @@ For any data that cannot be provided as part of the replication package, please 
 >
 > if anything needs adding, for a particular dataset, just add below the table. See Example.
 
-| file/name            | public | private | DOI/URL | Access described| cited readme | cited paper |
-| ----                 | ---    | ---     | ---     | ---             | ----         | ----        | 
-| data/raw/example.dta | yes    | no      | yes     | no              | yes          | yes         |
-| example2.dta         | yes    | no      | -       | no              | no           | yes         |
-| BLS                  | no     | no      | yes     | no              | yes          | yes          |
+| file/name            | public | private | shared with us | DOI/URL | Access described| cited readme | cited paper |
+| ----                 | ---    | ---     | ---     | ---     | ---             | ----         | ----        | 
+| data/raw/example.dta | yes    | no      | yes     | yes     | no              | yes          | yes         |
+| example2.dta         | yes    | no      | -       | -       | no              | no           | yes         |
+| BLS                  | no     | no      | yes     | yes     | no              | yes          | yes          |
 
 ### Example data: Bureau of Labor Statistics
 
