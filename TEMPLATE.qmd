@@ -238,6 +238,8 @@ For missing requirements, see the list of required changes in @sec-findings
 
 {{< include generated/report-code-quality.md >}}
 
+{{< include generated/report-llm-reproducibility.md >}}
+
 
 - [ ] The replication package contains a "main" or "master" file(s) which calls all other auxiliary programs.
 
