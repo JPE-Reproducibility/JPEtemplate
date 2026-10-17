@@ -472,9 +472,6 @@ Example:
 - [ ] `Missing README` is marked if there is no README to guide the replicator, or the README is not in compliance with JPE requirements
 
 
-{{< include generated/report-pii.md >}}
-
-
 
 > {REPLICATOR} You are done! Time to submit your report now!
 >
