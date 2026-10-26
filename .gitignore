@@ -75,6 +75,10 @@
 *.pickle
 *.tab
 *.TAB
+*.nc
+*.NC
+*.fst
+*.FST
 # Sometimes, these are data files, too
 *.txt
 *.TXT
