@@ -131,6 +131,7 @@ __MACOSX/
 __pycache__
 libraries
 paper-appendices/**
+paper-source/**
 confidential-data-not-for-publication/**
 
 
