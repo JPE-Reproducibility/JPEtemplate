@@ -12,6 +12,7 @@ jobs:
 
     env:
       DROPBOX_DOWNLOAD_URL: ${{ secrets.DROPBOX_DOWNLOAD_URL }}
+      PAPER_DOWNLOAD_URL: ${{ secrets.PAPER_DOWNLOAD_URL }}
     
     steps:
       - name: Checkout repository
