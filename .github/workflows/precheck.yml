@@ -40,6 +40,10 @@ jobs:
             println("✓ YAML loaded")
             using PackageScanner
             println("✓ PackageScanner loaded")
+            using JSON
+            println("✓ JSON loaded")
+            using Dates
+            println("✓ Dates loaded")
             println("\n✓ All required packages available")
           '
       
