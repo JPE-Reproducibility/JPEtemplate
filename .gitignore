@@ -79,6 +79,10 @@
 *.NC
 *.fst
 *.FST
+*.parquet
+*.PARQUET
+*.safetensors
+*.SAFETENSORS
 # Sometimes, these are data files, too
 *.txt
 *.TXT
