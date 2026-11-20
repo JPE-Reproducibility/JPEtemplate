@@ -472,10 +472,6 @@ Example:
 - [ ] `Missing README` is marked if there is no README to guide the replicator, or the README is not in compliance with JPE requirements
 
 
-{{< include generated/report-pii.md >}}
-
-
-
 > {REPLICATOR} You are done! Time to submit your report now!
 >
 > You must commit everything you want the Data Editor to be able to see to this git repository and push to the github remote. In particular, commit all files needed to compile your report, as well as the pdf version of your compiled report. 
